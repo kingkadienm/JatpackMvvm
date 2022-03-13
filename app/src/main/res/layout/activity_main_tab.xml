@@ -1,0 +1,37 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/main_tab_height"
+    android:background="@drawable/tabstrip_special_tab_bg">
+
+    <ImageView
+        android:id="@+id/main_tab_icon_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/common_tab_egg" />
+
+    <ImageView
+        android:id="@+id/main_tab_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/common_tab_index_s" />
+
+    <ImageView
+        android:id="@+id/main_tab_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/common_tab_dot" />
+
+    <com.wangzs.base.weight.navigation.internal.RoundMessageView
+        android:id="@+id/messages"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="3dp"
+        android:translationX="12dp" />
+
+</FrameLayout>

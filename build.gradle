@@ -1,0 +1,81 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+//plugins {
+//    id 'com.android.application'
+//    id 'com.android.library'
+//}
+apply from: 'config/config.gradle'
+
+
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+
+
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.6.3'
+
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+
+    }
+    //编码 ，javadoc 检查忽略
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+//Component
+apply plugin: 'component.appconfig'
+appConfig {
+    debugEnable true
+    apps {
+        app {
+            modules ':app_component:home',':app_component:contact',':app_component:message',':app_component:account'
+            applicationName 'com.wangzs.jatpackmvvm.AppApplication'
+        }
+    }
+    modules {
+
+        home {
+            name ':app_component:home'
+            mainActivity ".HomeActivity"
+            applicationId "com.wangzs.home"
+            isRunAlone false
+        }
+        contact {
+            name ':app_component:contact'
+            mainActivity ".ContactActivity"
+            applicationId "com.wangzs.contact"
+            isRunAlone false
+        }
+        message {
+            name ':app_component:message'
+            mainActivity ".MessageActivity"
+            applicationId "com.wangzs.message"
+            isRunAlone false
+        }
+        account {
+            name ':app_component:account'
+            mainActivity ".AccountActivity"
+            applicationId "com.wangzs.account"
+            isRunAlone false
+        }
+    }
+}

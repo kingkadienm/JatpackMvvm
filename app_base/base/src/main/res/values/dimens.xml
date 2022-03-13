@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="status_bar_height">0dp</dimen>
+
+    <!-- Navigation Begin -->
+    <dimen name="material_bottom_navigation_active_item_max_width">168dp</dimen>
+    <dimen name="material_bottom_navigation_height">56dp</dimen>
+    <dimen name="material_bottom_navigation_item_max_width">96dp</dimen>
+    <dimen name="material_bottom_navigation_item_min_width">56dp</dimen>
+    <dimen name="material_bottom_navigation_margin">8dp</dimen>
+    <dimen name="material_bottom_navigation_text_size">12sp</dimen>
+    <!-- Navigation End -->
+
+    <!-- Main Begin -->
+    <dimen name="main_tab_height">62dp</dimen>
+    <!-- Main End -->
+
+    <!-- 阴影的CardView -->
+    <dimen name="cardview_compat_inset_shadow">1dp</dimen>
+    <dimen name="cardview_default_elevation">2dp</dimen>
+    <dimen name="cardview_default_radius">2dp</dimen>
+    <!-- 阴影的CardView -->
+
+    <!-- Dialog Begin -->
+
+    <!--Alerts-->
+
+    <!--Text sizes-->
+    <!-- Dialog End -->
+
+</resources>
