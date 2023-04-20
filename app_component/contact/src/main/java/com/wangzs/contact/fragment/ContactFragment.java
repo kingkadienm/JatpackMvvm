@@ -8,7 +8,7 @@ import com.wangzs.core.base.IMainFragment;
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-12 0:14
+ * @Date: 2020-03-12 0:14
  * @Version:
  */
 public class ContactFragment extends BaseFragment implements IMainFragment {
@@ -25,12 +25,12 @@ public class ContactFragment extends BaseFragment implements IMainFragment {
 
     @Override
     public int getTabIconRes() {
-        return com.wangzs.res.R.drawable.common_tab_discover_n;
+        return  R.drawable.common_tab_discover_n;
     }
 
     @Override
     public int getTabIconCheckRes() {
-        return com.wangzs.res.R.drawable.common_tab_discover_s;
+        return  R.drawable.common_tab_discover_s;
     }
 
     @Override

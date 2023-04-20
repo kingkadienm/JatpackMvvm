@@ -1,5 +1,6 @@
 package com.wangzs.base.base.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.wangzs.base.toolskit.LogUtil;
 
@@ -16,11 +18,12 @@ import com.wangzs.base.toolskit.LogUtil;
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-10
+ * @Date: 2020-03-10
  * @Version:
  */
 public abstract class BaseFragment extends Fragment {
 
+    protected FragmentActivity context;
     private static final String TAG = "BaseFragment";
 
     private View mRootView;
@@ -32,6 +35,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        context = getActivity();
         if (mRootView == null) {
             mRootView = inflater.inflate(getLayoutResId(), container, false);
             initView();

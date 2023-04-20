@@ -12,7 +12,7 @@ import com.wangzs.core.CoreApplication;
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-11 15:23
+ * @Date: 2020-03-11 15:23
  * @Version:
  */
 public class AppApplication extends CoreApplication {

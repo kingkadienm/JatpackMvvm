@@ -8,7 +8,7 @@ import com.wangzs.router.RouterHelper;
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-11 12:08
+ * @Date: 2020-03-11 12:08
  * @Version:
  */
 public class AccountAppDelegate implements IAppDelegate {

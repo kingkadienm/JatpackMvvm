@@ -2,7 +2,7 @@ package com.wangzs.core.network;
 
 import android.text.TextUtils;
 
-import com.tencent.mmkv.MMKV;
+import com.blankj.utilcode.util.SPUtils;
 
 public class EnvController {
 
@@ -12,13 +12,13 @@ public class EnvController {
 
     public static String getCurEnv(){
         if (TextUtils.isEmpty(curEnv)){
-            curEnv =  MMKV.defaultMMKV().getString(SP_KEY_ENV, Env.ENV_TEST);
+            curEnv =  SPUtils.getInstance().getString(SP_KEY_ENV, Env.ENV_TEST);
         }
         return curEnv;
     }
     public static void setCurEnv(String env){
         curEnv = env;
-        MMKV.defaultMMKV().putString(SP_KEY_ENV, env).apply();
+       SPUtils.getInstance().put(SP_KEY_ENV, env);
     }
 
     public static class Env {

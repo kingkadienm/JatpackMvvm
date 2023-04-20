@@ -1,11 +1,12 @@
 plugins {
-    id 'com.android.application'
     id 'component.modules'
+    id 'org.jetbrains.kotlin.android'
 }
-//apply plugin: 'component.modules'
+
 static def releaseTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
+
 android {
     def versions = rootProject.ext.versions
     compileSdk versions.compileSdkVersion
@@ -72,7 +73,6 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), "$rootDir/config/proguard-rules.pro"
-            buildConfigField "boolean", "LOG_DEBUG", "false"
             signingConfig signingConfigs.release
         }
     }
@@ -86,16 +86,20 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.appcompat)
 
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
     api project(path: ':app_core:core')
-//    testImplementation 'junit:junit:4.13.2'
-//    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation "androidx.multidex:multidex:2.0.1"
 
+    // bugly sdk
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
 
+//    implementation "junit:junit:4.13.2"
+//    implementation "androidx.test:runner:1.5.2"
+//    implementation 'androidx.test.ext:junit:1.1.5'
+//    implementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

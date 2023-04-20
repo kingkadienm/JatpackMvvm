@@ -10,18 +10,21 @@ import java.util.HashMap;
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-10
+ * @Date: 2020-03-10
  * @Version:
  */
 
 public class RxUrl {
 
-    private static final String DEV_BASE_URL = "xxxxxxxx";
-    private static final String TEST_BASE_URL = "xxxxxx";
-    private static final String PRE_BASE_URL = "xxxxxxx";
-    private static final String PRODUCT_BASE_URL = "xxxxxxx";
 
-    private static final String URL = "xxxxxxxxx";
+
+
+    private static final String DEV_BASE_URL = "https://www.efair123.com/";
+    private static final String TEST_BASE_URL = "https://www.efair123.com/";
+    private static final String PRE_BASE_URL = "https://www.efair123.com/";
+    private static final String PRODUCT_BASE_URL = "https://www.efair123.com/";
+
+//    private static final String URL = "xxxxxxxxx";
 
     /**
      * 信息流图片服务器地址

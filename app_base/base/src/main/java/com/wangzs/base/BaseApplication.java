@@ -7,13 +7,12 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
 
-import com.tencent.mmkv.MMKV;
 import com.wangzs.base.toolskit.LogUtil;
 
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-10
+ * @Date: 2020-03-10
  * @Version:
  */
 public abstract class BaseApplication extends Application {
@@ -35,8 +34,7 @@ public abstract class BaseApplication extends Application {
             LogUtil.setLogEnabled(isDebug);
         }
 
-        MMKV.initialize(this);
-    }
+     }
 
     /**
      * 判断App是否是Debug版本.

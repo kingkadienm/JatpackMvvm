@@ -17,7 +17,10 @@ public class RouterHelper {
 
     public static class App {
         public static final String MAIN_ACTIVITY = "/app/MainActivity";
+        public static final String SPLASH_ACTIVITY = "/app/SplashActivity";
+//        public static final String CHANGE_LANGUAGE_ACTIVITY = "/app/ChangeLanguageActivity";
     }
+
 
     public static class Home {
         public static final String HOME_ACTIVITY = "/home/HomeActivity";
@@ -29,6 +32,8 @@ public class RouterHelper {
     }
 
     public static class Account {
+        public static final String LOGIN_ACTIVITY = "/account/LoginActivity";
+
         public static final String ACCOUNT_ACTIVITY = "/account/AccountActivity";
     }
 

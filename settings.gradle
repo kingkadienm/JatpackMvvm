@@ -1,20 +1,3 @@
-//pluginManagement {
-//    repositories {
-//        gradlePluginPortal()
-//        google()
-//        jcenter()
-//        mavenCentral()
-//    }
-//
-//}
-//dependencyResolutionManagement {
-//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-//    repositories {
-//        google()
-//        jcenter()
-//        mavenCentral()
-//    }
-//}
 rootProject.name = "JatpackMvvm"
 include ':app'
 include ':app_core:core'
@@ -26,3 +9,7 @@ include ':app_core:router'
 include ':app_component:home'
 include ':app_component:message'
 include ':app_component:contact'
+
+//工具类
+include ':app_utils'
+include ':app_three:xrecyclerview'

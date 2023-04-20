@@ -4,21 +4,20 @@ ext {
     def lifecycle_version = "2.4.1"
     // app 相关版本控制
     versions = [
-            compileSdkVersion: 31,
-            minSdkVersion    : 21,
-            targetSdkVersion : 30,
+            compileSdkVersion: 33,
+            minSdkVersion    : 24,
+            targetSdkVersion : 33,
             versionCode      : 1,
             versionName      : "1.0",
-
             applicationId    : "com.wangzs.jatpackmvvm"
     ]
 
     // 依赖相关版本控制
     depVersion = [
-            appCompatVersion   : "1.3.1",
-            recyclerViewVersion: "1.0.0",
-            constraintVersion  : "1.1.3",
-            materialVersion    : "1.0.0"
+            appCompatVersion   : "1.6.1",
+            recyclerViewVersion: "1.3.0",
+            constraintVersion  : "2.1.4",
+            materialVersion    : "1.8.0"
     ]
 
     // 依赖
@@ -29,14 +28,17 @@ ext {
             constraint              : "androidx.constraintlayout:constraintlayout:${depVersion.constraintVersion}",
             design                  : "com.google.android.material:material:${depVersion.materialVersion}",
 
+            //kotlin
+            kotlin_core             : 'androidx.core:core-ktx:1.10.0',
+
             //test
-//            junit                   : "junit:junit:4.12",
-//            runner                  : "androidx.test:runner:1.1.1",
-//            testjunit               : 'androidx.test.ext:junit:1.1.2',
-//            espressocore            : 'androidx.test.espresso:espresso-core:3.3.0',
+            junit                   : "junit:junit:4.13.2",
+            runner                  : "androidx.test:runner:1.5.2",
+            testjunit               : 'androidx.test.ext:junit:1.1.5',
+            espressocore            : 'androidx.test.espresso:espresso-core:3.5.1',
 
 //            aRouterApi              : "com.alibaba:arouter-api:1.3.1",
-            mmkv                    : 'com.tencent:mmkv:1.2.12',//腾讯类似于sp的 但是效率比sp高
+//            mmkv                    : 'com.tencent:mmkv:1.2.12',//腾讯类似于sp的 但是效率比sp高
             glide                   : 'com.github.bumptech.glide:glide:4.12.0',
 
 
@@ -63,16 +65,16 @@ ext {
             recyclerViewAdapter     : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
             luban                   : "top.zibin:Luban:1.1.8",
 
+            BackgroundLibrary       : 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.6'
 
     ]
 
     kapts = [
-            roomCompiler   : "androidx.room:room-compiler:$room_version",
-            glideCompiler  : 'com.github.bumptech.glide:compiler:4.12.0',
+            roomCompiler : "androidx.room:room-compiler:$room_version",
+            glideCompiler: 'com.github.bumptech.glide:compiler:4.12.0',
 //            aRouterCompiler: "com.alibaba:arouter-compiler:1.1.4",
 
     ]
-
 
     // 签名信息
     apksign = [

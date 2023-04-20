@@ -2,14 +2,17 @@ package com.wangzs.home.fragment;
 
 import android.os.Bundle;
 
+import com.wangzs.base.apk_update.UpdateVersionDialog;
 import com.wangzs.base.base.fragment.BaseFragment;
+import com.wangzs.base.bean.VersionBean;
 import com.wangzs.core.base.IMainFragment;
+import com.wangzs.core.checkVersion.UpdateUtils;
 import com.wangzs.home.R;
 
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-12 0:14
+ * @Date: 2020-03-12 0:14
  * @Version:
  */
 public class HomeFragment extends BaseFragment implements IMainFragment {
@@ -26,12 +29,12 @@ public class HomeFragment extends BaseFragment implements IMainFragment {
 
     @Override
     public int getTabIconRes() {
-        return com.wangzs.res.R.drawable.common_tab_index_n;
+        return R.drawable.common_tab_me_n;
     }
 
     @Override
     public int getTabIconCheckRes() {
-        return com.wangzs.res.R.drawable.common_tab_index_s;
+        return R.drawable.common_tab_me_s;
     }
 
     @Override
@@ -42,5 +45,17 @@ public class HomeFragment extends BaseFragment implements IMainFragment {
     @Override
     public String getTitleTxt() {
         return "首页";
+    }
+
+    @Override
+    protected void initView() {
+        super.initView();
+//        UpdateUtils updateUtils = new UpdateUtils(context);
+//        updateUtils.checkVersion(new UpdateUtils.CheckVersionCallback() {
+//            @Override
+//            public void onNotUpdateVersion() {
+//
+//            }
+//        });
     }
 }

@@ -9,7 +9,7 @@ import com.wangzs.message.R;
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-12 0:26
+ * @Date: 2020-03-12 0:26
  * @Version:
  */
 public class MessageFragment extends BaseFragment implements IMainFragment {
@@ -30,13 +30,13 @@ public class MessageFragment extends BaseFragment implements IMainFragment {
 
     @Override
     public int getTabIconRes() {
-        return com.wangzs.res.R.drawable.common_tab_message_n;
+        return  R.drawable.common_tab_message_n;
 
     }
 
     @Override
     public int getTabIconCheckRes() {
-        return com.wangzs.res.R.drawable.common_tab_message_s;
+        return  R.drawable.common_tab_message_s;
     }
 
     @Override

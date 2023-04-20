@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="BaseAppTheme" />
+
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--窗口统一背景颜色-->
+        <item name="android:windowBackground">@color/white</item>
+        <!--是否让系统顶部状态栏和底部导航窗口占据屏幕上下位置，如果设为false浮在屏幕不占据-->
+        <item name="android:fitsSystemWindows">false</item>
+
+        <!--窗口 动画-->
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+
+        <!--状态改变的时候不重绘-->
+        <item name="android:configChanges">orientation|keyboardHidden|screenSize</item>
+    </style>
+
+    <!--解决切换时状态栏闪烁问题-->
+    <style name="MainTheme" parent="AppTheme">
+        <!--窗口统一背景颜色-->
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <!--透明Activity-->
+    <style name="dialog_activity" parent="MainTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+    <!--窗口切换动画-->
+    <style name="AnimationActivity" mce_bogus="1" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/push_buttom_in</item><!--新界面进入-->
+        <item name="android:activityOpenExitAnimation">@anim/push_up_out</item><!--老界面退出-->
+        <!--        <item name="android:activityCloseEnterAnimation">@anim/push_left_in</item>&lt;!&ndash;老界面进入&ndash;&gt;-->
+        <!--        <item name="android:activityCloseExitAnimation">@anim/push_right_out</item>&lt;!&ndash;新界面退出&ndash;&gt;-->
+    </style>
+
+</resources>

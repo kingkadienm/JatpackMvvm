@@ -27,12 +27,14 @@ android {
 dependencies {
 
     api project(path: ':app_base:res')
+    api project(path: ':app_utils')
+    api project(path:':app_three:xrecyclerview')
     api fileTree(dir: 'libs', include: ['*.jar'])
 
     deps.each { k, v -> api v }
 
-    kapts.each{k,v->
-        annotationProcessor  v
+    kapts.each { k, v ->
+        annotationProcessor v
     }
 
 }

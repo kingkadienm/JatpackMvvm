@@ -6,7 +6,7 @@ import com.wangzs.base.base.fragment.BaseFragment;
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-11 12:08
+ * @Date: 2020-03-11 12:08
  * @Version:
  */
 public class AccountViewDelegate implements IViewDelegate {

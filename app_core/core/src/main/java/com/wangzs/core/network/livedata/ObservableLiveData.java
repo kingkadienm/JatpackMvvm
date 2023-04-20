@@ -19,7 +19,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * @Description: 拓展LiveData对象
  * @Author: wangzs
- * @Date: 2022-03-10
+ * @Date: 2020-03-10
  * @Version:
  */
 public class ObservableLiveData<T> extends MediatorLiveData<RxResult<T>> {

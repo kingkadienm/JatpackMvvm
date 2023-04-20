@@ -6,7 +6,7 @@ import com.wangzs.message.fragment.MessageFragment;
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-12 0:23
+ * @Date: 2020-03-12 0:23
  * @Version:
  */
 public class MessageViewDelegate implements IViewDelegate {

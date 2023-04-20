@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.wangzs.base">
 
+    <application
+        android:allowBackup="false"
+        android:networkSecurityConfig="@xml/network_security_config"
+        tools:replace="android:allowBackup">
+        <service android:name="com.wangzs.base.service.ApkDownloadService" />
+
+        <activity
+            android:name=".base.activity.WebViewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".base.activity.ChangeLanguageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+    </application>
 </manifest>

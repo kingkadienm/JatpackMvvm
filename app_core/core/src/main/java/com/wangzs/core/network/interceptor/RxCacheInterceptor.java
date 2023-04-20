@@ -1,6 +1,8 @@
 package com.wangzs.core.network.interceptor;
 
 
+import com.wangzs.base.BaseApplication;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
@@ -12,7 +14,7 @@ import okhttp3.Response;
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-10
+ * @Date: 2020-03-10
  * @Version:
  */
 
@@ -23,9 +25,9 @@ public class RxCacheInterceptor {
      *
      * @return
      */
-//    public static Cache create() {
-//        return new Cache(BaseApplication.getContext().getCacheDir(), 10 * 1024 * 1024); // 缓存大小10M
-//    }
+    public static Cache create() {
+        return new Cache(BaseApplication.getContext().getCacheDir(), 10 * 1024 * 1024); // 缓存大小10M
+    }
 
     /**
      * 有网时的缓存设置

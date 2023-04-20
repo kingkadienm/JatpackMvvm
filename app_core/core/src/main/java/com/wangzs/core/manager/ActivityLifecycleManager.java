@@ -5,15 +5,17 @@ import android.app.Application;
 import android.os.Bundle;
 
 
-import com.wangzs.base.toolskit.LogUtil;
+import com.blankj.utilcode.util.LanguageUtils;
+import com.blankj.utilcode.util.LogUtils;
 
+import java.util.Locale;
 import java.util.Stack;
 
 
 /**
  * @Description:
  * @Author: wangzs
- * @Date: 2022-03-10
+ * @Date: 2020-03-10
  * @Version:
  */
 public final class ActivityLifecycleManager {
@@ -64,6 +66,8 @@ public final class ActivityLifecycleManager {
 //                    store.add((ActivityDetail) activity);
 //                }
                 mStoreAll.add(activity);
+//                LanguageUtils.getInstance().applyLanguage(activity);
+//                LanguageUtils.updateAppContextLanguage();
             }
 
             @Override
@@ -133,14 +137,14 @@ public final class ActivityLifecycleManager {
      * @param activity
      */
     private void startActivity(Activity activity) {
-        LogUtil.i("start activity:" + activity.getClass().getName());
+        LogUtils.i("start activity:" + activity.getClass().getName());
     }
 
     /**
      * 应用冷启动
      */
     private void startApp(Activity activity) {
-        LogUtil.i("start app:" + activity.getClass().getName());
+        LogUtils.i("start " + activity.getClass().getName());
     }
 
     /**
@@ -150,7 +154,7 @@ public final class ActivityLifecycleManager {
      */
     private void back2App(Activity activity) {
         mIsRunInBackground = false;
-        LogUtil.i("back to app");
+        LogUtils.i("back to app");
     }
 
     /**
@@ -160,6 +164,15 @@ public final class ActivityLifecycleManager {
      */
     private void leaveApp(Activity activity) {
         mIsRunInBackground = true;
-        LogUtil.i("leave app");
+        LogUtils.i("leave app");
+    }
+
+    public void finishAllActivity() {
+        if (mStoreAll != null) {
+            for (Activity activity : mStoreAll) {
+                activity.finish();
+            }
+            mStoreAll.clear();
+        }
     }
 }
