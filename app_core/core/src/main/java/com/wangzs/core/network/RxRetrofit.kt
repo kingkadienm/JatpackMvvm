@@ -1,6 +1,7 @@
 package com.wangzs.core.network
 
 import com.wangzs.core.network.cert.TrustAllManager
+import com.wangzs.core.network.converter.GsonConverterFactory
 import com.wangzs.core.network.converter.JsonConverterFactory
 import com.wangzs.core.network.interceptor.RxEncryptInterceptor
 import com.wangzs.core.network.interceptor.RxLoggingInterceptor
@@ -8,7 +9,7 @@ import okhttp3.OkHttpClient
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+//import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**

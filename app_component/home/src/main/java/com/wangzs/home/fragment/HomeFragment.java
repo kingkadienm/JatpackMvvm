@@ -50,12 +50,6 @@ public class HomeFragment extends BaseFragment implements IMainFragment {
     @Override
     protected void initView() {
         super.initView();
-//        UpdateUtils updateUtils = new UpdateUtils(context);
-//        updateUtils.checkVersion(new UpdateUtils.CheckVersionCallback() {
-//            @Override
-//            public void onNotUpdateVersion() {
-//
-//            }
-//        });
+
     }
 }

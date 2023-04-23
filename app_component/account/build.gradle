@@ -1,7 +1,14 @@
 plugins {
     id 'component.modules'
-}
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 
+}
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 android {
     def versions = rootProject.ext.versions
 
@@ -9,11 +16,7 @@ android {
     defaultConfig {
         minSdkVersion versions.minSdkVersion
         targetSdkVersion versions.targetSdkVersion
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
+
     }
 
     buildTypes {
@@ -36,6 +39,5 @@ dependencies {
 
 
     api 'com.alibaba:arouter-api:1.5.2'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
-
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
 }

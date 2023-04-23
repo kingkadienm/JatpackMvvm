@@ -147,11 +147,11 @@ public class UpdateUtils {
             return Observable.just(versionBean);
         };
     }
-
+//   private Function convertVersionInfoJSONObject() {
+//        return (Function<VersionBean, ObservableSource<VersionBean>>) Observable::just;
+//    }
 
     private void requestVersionInfo(DefaultHttpCallback callback) {
-
-
         LiveDataObservableAdapter.fromObservable(
                         CoreApi.getInstance().getVersionInfo(AppUtils.getAppVersionName(),
                                         "android", AppUtils.getAppVersionCode(), 15)

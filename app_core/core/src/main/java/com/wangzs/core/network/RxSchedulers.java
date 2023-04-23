@@ -50,9 +50,7 @@ public class RxSchedulers {
     public static ObservableTransformer<JSONObject, Object> handleResult() {
         return upstream -> upstream
                 .flatMap((Function<JSONObject, ObservableSource<Object>>) jsonObject -> {
-
                             ResultBody rxResult = ResultBody.convert(jsonObject);
-
                             if (rxResult.mCode == RxErrorCode.CODE_SUCCESS) {
                                 // 网络数据请求成功
                                 return Observable.just(rxResult.mData);
@@ -64,6 +62,22 @@ public class RxSchedulers {
                         }
                 );
     }
-
+// public static ObservableTransformer<ResultBody<?>, Object> handleResult() {
+//        return upstream -> upstream
+//                .flatMap((Function<ResultBody<?>, ObservableSource<Object>>) rxResult -> {
+//
+////                            ResultBody rxResult = ResultBody.convert(jsonObject);
+//
+//                            if (rxResult.mCode == RxErrorCode.CODE_SUCCESS) {
+//                                // 网络数据请求成功
+//                                return Observable.just(rxResult.mData);
+//                            } else if (rxResult.mCode == RxErrorCode.CODE_RE_LOGIN_1 || rxResult.mCode == RxErrorCode.CODE_RE_LOGIN_2) {
+//                                return Observable.error(new RxTokenException(rxResult.mCode, rxResult.mMsg));
+//                            }
+//                            // 错误的请求，服务器返回错误码和错误信息
+//                            return Observable.error(new RxException(rxResult.mCode, rxResult.mMsg));
+//                        }
+//                );
+//    }
 
 }

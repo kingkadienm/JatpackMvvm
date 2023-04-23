@@ -1,6 +1,9 @@
 package com.wangzs.core.api
 
+import androidx.lifecycle.Observer
+import com.wangzs.base.bean.VersionBean
 import com.wangzs.core.network.RxRetrofit
+import com.wangzs.core.network.bean.ResultBody
 import io.reactivex.Observable
 import org.json.JSONObject
 import retrofit2.http.GET
@@ -24,6 +27,14 @@ interface CoreApi {
     }
 
 
+
+//@GET("index.php?app=api/package/detectionInfo")
+//    fun getVersionInfo(
+//        @Query("versionNumber") versionNumber: String,
+//        @Query("devices") devices: String,
+//        @Query("versionCode") versionCode: Int,
+//        @Query("versionSource") versionSource: Int
+//    ): Observable<ResultBody<VersionBean>>
     @GET("index.php?app=api/package/detectionInfo")
     fun getVersionInfo(
         @Query("versionNumber") versionNumber: String,
