@@ -1,7 +1,6 @@
 package com.wangzs.jatpackmvvm;
 
 
-
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.View;
@@ -38,7 +37,7 @@ public class MainActivity extends BaseActivity {
     private NavigationController mNavController;
     private ViewPager2 mViewPager;
 
-    List<BaseFragment> mFragments;
+    List<Fragment> mFragments;
 
     @Override
     protected int getLayoutResId() {
@@ -53,21 +52,24 @@ public class MainActivity extends BaseActivity {
         PageNavigationView.CustomBuilder builder = tab.custom();
 
         mFragments = ViewManager.getInstance().getAllFragment(this);
-
+        if (mFragments != null) {
+            mFragments.add(2, new Fragment());
+        }
         int i = 0;
 
-        for (BaseFragment fragment : mFragments) {
+        for (Fragment fragment : mFragments) {
 
             if (fragment instanceof IMainFragment) {
                 IMainFragment mainFragment = (IMainFragment) fragment;
                 builder.addItem(newItem(mainFragment.getTabIconRes(),
-                        mainFragment.getTabIconCheckRes(),mainFragment.getTitleTxt()));
-
+                        mainFragment.getTabIconCheckRes(), mainFragment.getTitleTxt()));
 //                builder.addItem(newMaterialItem(mainFragment.getTitleTxt(),mainFragment.getTabIconRes(),
 //                         mainFragment.getTabIconCheckRes(),false,0,0));
             }
-
             i++;
+            if (i == 2) {
+                builder.addItem(newRoundItem(R.drawable.common_tab_publish, R.drawable.common_tab_publish, ""));
+            }
         }
 
         mNavController = builder.build();
@@ -80,10 +82,10 @@ public class MainActivity extends BaseActivity {
         mNavController.setupWithViewPager(mViewPager);
 
         //设置消息数
-//        mNavController.setMessageNumber(0, 8);
+        mNavController.setMessageNumber(0, 8);
 
         //设置显示小圆点
-//        mNavController.setHasMessage(1, true);
+        mNavController.setHasMessage(3, true);
 
         mNavController.addTabItemSelectedListener(new OnTabItemSelectedListener() {
             @Override
@@ -106,12 +108,11 @@ public class MainActivity extends BaseActivity {
     /**
      * 正常tab
      */
-    private BaseTabItem newItem(int drawable, int checkedDrawable,String titleRes) {
+    private BaseTabItem newItem(int drawable, int checkedDrawable, String titleRes) {
         MainTab mainTab = new MainTab(this);
-        mainTab.initialize(drawable, checkedDrawable,titleRes);
+        mainTab.initialize(drawable, checkedDrawable, titleRes);
         return mainTab;
     }
-
 
 
     /**
@@ -126,11 +127,11 @@ public class MainActivity extends BaseActivity {
         return mainTab;
     }
 
-//    private BaseTabItem newMaterialItem(String title, int drawable, int checkedDrawable, boolean tintIcon, int color, int checkedColor){
-//        MaterialItemView mainTab = new MaterialItemView(this);
-//        mainTab.initialization(title, ContextCompat.getDrawable(this, drawable), ContextCompat.getDrawable(this, checkedDrawable), tintIcon, color, checkedColor);
-//        return mainTab;
-//    }
+    private BaseTabItem newMaterialItem(String title, int drawable, int checkedDrawable, boolean tintIcon, int color, int checkedColor) {
+        MaterialItemView mainTab = new MaterialItemView(this);
+        mainTab.initialization(title, ContextCompat.getDrawable(this, drawable), ContextCompat.getDrawable(this, checkedDrawable), tintIcon, color, checkedColor);
+        return mainTab;
+    }
 
     private class MainPagerAdapter extends FragmentStateAdapter {
 

@@ -4,7 +4,6 @@ import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wangzs.account.R
 import com.wangzs.base.base.activity.BaseActivity
-import com.wangzs.core.checkVersion.UpdateUtils
 import com.wangzs.router.RouterHelper
 
 @Route(path = RouterHelper.Account.LOGIN_ACTIVITY)
@@ -22,8 +21,8 @@ class LoginActivity : BaseActivity() {
     }
 
     fun netTest(view: View?) {
-        UpdateUtils(mContext).checkVersion { }
-
+//        UpdateUtils(mContext).checkVersion { }
+        RouterHelper.getActivity(RouterHelper.App.MAIN_ACTIVITY).navigation()
 
     }
 }

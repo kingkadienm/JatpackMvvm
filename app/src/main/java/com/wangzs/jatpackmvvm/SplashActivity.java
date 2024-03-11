@@ -89,8 +89,8 @@ public class SplashActivity extends BaseActivity {
                             }
                         } else {
                             LogUtils.e("启动页跳转login activity");
-//                            startActivity(new Intent(mContext, ChangeLanguageActivity.class));
-                            RouterHelper.getActivity(RouterHelper.Account.LOGIN_ACTIVITY).navigation();
+                            RouterHelper.getActivity(RouterHelper.App.MAIN_ACTIVITY).navigation();
+//                            RouterHelper.getActivity(RouterHelper.Account.LOGIN_ACTIVITY).navigation();
                             finish();
                         }
                     }

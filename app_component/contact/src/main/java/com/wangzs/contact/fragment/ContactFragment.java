@@ -40,6 +40,6 @@ public class ContactFragment extends BaseFragment implements IMainFragment {
 
     @Override
     public String getTitleTxt() {
-        return "联系人";
+        return "舞圈";
     }
 }

@@ -51,7 +51,10 @@ appConfig {
     debugEnable true
     apps {
         app {
-            modules ':app_component:home',':app_component:contact',':app_component:message',':app_component:account'
+            modules ':app_component:home',
+                    ':app_component:contact',
+                    ':app_component:message',
+                    ':app_component:account'
             applicationName 'com.wangzs.jatpackmvvm.AppApplication'
         }
     }

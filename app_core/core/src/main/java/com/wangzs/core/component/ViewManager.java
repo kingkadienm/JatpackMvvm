@@ -3,6 +3,8 @@ package com.wangzs.core.component;
 import android.content.Context;
 
 
+import androidx.fragment.app.Fragment;
+
 import com.wangzs.base.base.fragment.BaseFragment;
 import com.wangzs.base.toolskit.LogUtil;
 import com.wangzs.core.base.IMainFragment;
@@ -27,7 +29,7 @@ public final class ViewManager {
     private ViewManager() {
     }
 
-    public List<BaseFragment> getAllFragment(Context context) {
+    public List<Fragment> getAllFragment(Context context) {
 
         List<IViewDelegate> viewDelegates = ClassUtils.getObjectsWithInterface(context, IViewDelegate.class, "com.wangzs.core.component");
         for (IViewDelegate viewDelegate : viewDelegates) {
@@ -43,7 +45,7 @@ public final class ViewManager {
         }
 
         if (sFragmentList.size() > 0) {
-            List<BaseFragment> list = new ArrayList<>();
+            List<Fragment> list = new ArrayList<>();
             for (Integer key : sFragmentList.keySet()) {
                 list.add(sFragmentList.get(key));
             }

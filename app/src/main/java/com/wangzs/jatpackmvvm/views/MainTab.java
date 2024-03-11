@@ -1,11 +1,13 @@
 package com.wangzs.jatpackmvvm.views;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IdRes;
@@ -20,8 +22,7 @@ import com.wangzs.jatpackmvvm.R;
 public class MainTab extends BaseTabItem {
 
     private ImageView mIcon;
-    private View mIconBg;
-    private View mIconDot;
+    private TextView mTabText;
     private final RoundMessageView mMessages;
 
     private Drawable mDefaultDrawable;
@@ -44,8 +45,7 @@ public class MainTab extends BaseTabItem {
         LayoutInflater.from(context).inflate(R.layout.activity_main_tab, this, true);
 
         mIcon = findViewById(R.id.main_tab_icon);
-        mIconBg = findViewById(R.id.main_tab_icon_bg);
-        mIconDot = findViewById(R.id.main_tab_dot);
+        mTabText = findViewById(R.id.main_tab_text);
         mMessages = findViewById(R.id.messages);
     }
 
@@ -83,13 +83,11 @@ public class MainTab extends BaseTabItem {
     @Override
     public void setChecked(boolean checked) {
         if (checked) {
-            mIconBg.setVisibility(View.VISIBLE);
-            mIconDot.setVisibility(View.VISIBLE);
             mIcon.setImageDrawable(mCheckedDrawable);
+            mTabText.setTextColor(Color.parseColor("#333333"));
         } else {
-            mIconBg.setVisibility(View.INVISIBLE);
-            mIconDot.setVisibility(View.INVISIBLE);
             mIcon.setImageDrawable(mDefaultDrawable);
+            mTabText.setTextColor(Color.parseColor("#a9a9a9"));
         }
         mChecked = checked;
     }
@@ -106,6 +104,7 @@ public class MainTab extends BaseTabItem {
 
     @Override
     public void setTitle(String title) {
+        mTabText.setText(title);
     }
 
     @Override

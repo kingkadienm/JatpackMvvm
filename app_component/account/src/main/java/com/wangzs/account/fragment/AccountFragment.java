@@ -23,12 +23,12 @@ public class AccountFragment extends BaseFragment implements IMainFragment {
 
     @Override
     public int getTabIconRes() {
-        return R.drawable.common_tab_index_n;
+        return R.drawable.common_tab_me_n;
     }
 
     @Override
     public int getTabIconCheckRes() {
-        return R.drawable.common_tab_index_s;
+        return R.drawable.common_tab_me_s;
     }
 
 

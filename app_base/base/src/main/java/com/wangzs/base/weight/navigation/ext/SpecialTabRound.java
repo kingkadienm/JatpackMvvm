@@ -18,8 +18,8 @@ import com.wangzs.base.weight.navigation.item.BaseTabItem;
 public class SpecialTabRound extends BaseTabItem {
 
     private ImageView mIcon;
-    private final TextView mTitle;
-    private final RoundMessageView mMessages;
+//    private final TextView mTitle;
+//    private final RoundMessageView mMessages;
 
     private Drawable mDefaultDrawable;
     private Drawable mCheckedDrawable;
@@ -43,8 +43,8 @@ public class SpecialTabRound extends BaseTabItem {
         LayoutInflater.from(context).inflate(R.layout.tabstrip_special_tab_round, this, true);
 
         mIcon = findViewById(R.id.icon);
-        mTitle = findViewById(R.id.title);
-        mMessages = findViewById(R.id.messages);
+//        mTitle = findViewById(R.id.title);
+//        mMessages = findViewById(R.id.messages);
     }
 
     /**
@@ -57,34 +57,34 @@ public class SpecialTabRound extends BaseTabItem {
     public void initialize(@DrawableRes int drawableRes, @DrawableRes int checkedDrawableRes, String title) {
         mDefaultDrawable = ContextCompat.getDrawable(getContext(), drawableRes);
         mCheckedDrawable = ContextCompat.getDrawable(getContext(), checkedDrawableRes);
-        mTitle.setText(title);
+//        mTitle.setText(title);
     }
 
     @Override
     public void setChecked(boolean checked) {
         if (checked) {
             mIcon.setImageDrawable(mCheckedDrawable);
-            mTitle.setTextColor(mCheckedTextColor);
+//            mTitle.setTextColor(mCheckedTextColor);
         } else {
             mIcon.setImageDrawable(mDefaultDrawable);
-            mTitle.setTextColor(mDefaultTextColor);
+//            mTitle.setTextColor(mDefaultTextColor);
         }
         mChecked = checked;
     }
 
     @Override
     public void setMessageNumber(int number) {
-        mMessages.setMessageNumber(number);
+//        mMessages.setMessageNumber(number);
     }
 
     @Override
     public void setHasMessage(boolean hasMessage) {
-        mMessages.setHasMessage(hasMessage);
+//        mMessages.setHasMessage(hasMessage);
     }
 
     @Override
     public void setTitle(String title) {
-        mTitle.setText(title);
+//        mTitle.setText(title);
     }
 
     @Override
@@ -105,7 +105,8 @@ public class SpecialTabRound extends BaseTabItem {
 
     @Override
     public String getTitle() {
-        return mTitle.getText().toString();
+        return "";
+//        return mTitle.getText().toString();
     }
 
     public void setTextDefaultColor(@ColorInt int color) {

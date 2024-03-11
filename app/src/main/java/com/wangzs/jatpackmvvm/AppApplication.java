@@ -1,9 +1,13 @@
 package com.wangzs.jatpackmvvm;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
+import android.os.Bundle;
 
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.multidex.MultiDex;
 
 import com.wangzs.base.toolskit.LogUtil;
@@ -26,5 +30,8 @@ public class AppApplication extends CoreApplication {
     public void onCreate() {
         super.onCreate();
         LogUtil.setLogEnabled(BuildConfig.DEBUG);
+
+
+
     }
 }

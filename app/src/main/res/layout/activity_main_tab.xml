@@ -1,37 +1,44 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/main_tab_height"
-    android:background="@drawable/tabstrip_special_tab_bg">
+    android:background="#00000000"
+    android:paddingTop="@dimen/dp_15">
 
-    <ImageView
-        android:id="@+id/main_tab_icon_bg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/common_tab_egg" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/black" />
 
-    <ImageView
-        android:id="@+id/main_tab_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/common_tab_index_s" />
+    <FrameLayout
+        android:background="@drawable/tabstrip_special_tab_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/main_tab_dot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="45dp"
-        android:src="@drawable/common_tab_dot" />
+        <ImageView
+            android:id="@+id/main_tab_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/common_tab_discover_n" />
 
-    <com.wangzs.base.weight.navigation.internal.RoundMessageView
-        android:id="@+id/messages"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="3dp"
-        android:translationX="12dp" />
+        <TextView
+            android:id="@+id/main_tab_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="4dp"
+            android:maxLines="1"
+            android:text="1231"
+            android:textSize="12sp" />
+
+        <com.wangzs.base.weight.navigation.internal.RoundMessageView
+            android:id="@+id/messages"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dp"
+            android:translationX="14dp" />
+    </FrameLayout>
 
 </FrameLayout>

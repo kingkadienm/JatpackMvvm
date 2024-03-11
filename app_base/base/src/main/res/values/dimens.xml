@@ -13,7 +13,7 @@
     <!-- Navigation End -->
 
     <!-- Main Begin -->
-    <dimen name="main_tab_height">62dp</dimen>
+    <dimen name="main_tab_height">77dp</dimen>
     <!-- Main End -->
 
     <!-- 阴影的CardView -->
